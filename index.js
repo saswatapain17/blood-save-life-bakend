@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-     // "https://your-frontend-domain.com", // Update with your actual frontend URL
+       https://tubular-moonbeam-fd390c.netlify.app/
     ],
     credentials: true,
   })
