@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://tubular-moonbeam-fd390c.netlify.app", // Enclosed in quotes
+      "https://aesthetic-churros-1a9ee7.netlify.app", // Enclosed in quotes
     ],
     credentials: true,
   })
