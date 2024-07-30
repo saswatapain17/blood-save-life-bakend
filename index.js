@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-     // "https://your-frontend-domain.render.com", // Update with your actual frontend URL
+     // "https://your-frontend-domain.com", // Update with your actual frontend URL
     ],
     credentials: true,
   })
@@ -28,9 +28,10 @@ app.use("/user", require("./routers/userRouter"));
 app.use("/bank", require("./routers/bankRouter"));
 app.use("/camps", require("./routers/campRouter"));
 
-// No need to listen explicitly; Render handles this
-// app.listen(process.env.PORT || 3177, () =>
-//   console.log(`Server running at http://localhost:${process.env.PORT || 3177}`)
-// );
+// Explicitly listen on the port provided by Render
+const port = process.env.PORT || 3177;
+app.listen(port, () =>
+  console.log(`Server running on port ${port}`)
+);
 
-module.exports = app; // Export the app to be used as a serverless function
+module.exports = app; // For serverless functions if needed
